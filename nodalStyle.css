@@ -1,0 +1,53 @@
+    body { margin: 0; padding: 0; }
+
+    a, category { border-style:solid;
+        padding:5px;
+        border-width:1px;
+        border-radius: 5px;
+        text-decoration: none;
+        color:#144481;
+        margin-left:10px;
+        line-height:3em;
+    }
+
+
+
+    .section {
+        position: absolute;
+        width:400px;
+        margin-left:-200px;
+        top:200px;
+        left:50%;
+    }
+
+
+    .past {
+        opacity: 0;
+        visibility: hidden;
+
+        -webkit-transform: scale(16);
+        -moz-transform: scale(16);
+        -ms-transform: scale(16);
+        -o-transform: scale(16);
+        transform: scale(16);
+
+        -webkit-transition: 0.8s ease;
+    }
+
+    .present {
+        -webkit-transition: 0.8s ease;
+    }
+
+    .future {
+        opacity: 0;
+        visibility: hidden;
+
+        -webkit-transform: scale(0.2);
+        -moz-transform: scale(0.2);
+        -ms-transform: scale(0.2);
+        -o-transform: scale(0.2);
+        transform: scale(0.2);
+
+        -webkit-transition: 0.8s ease;
+    }
+
