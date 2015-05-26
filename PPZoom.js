@@ -1,6 +1,39 @@
 
 /**
- * TODO -- document
+ * PPZoomer - Creates a zoom layer effect.  Currently only
+ *            supports one level of zoominess.
+ **********************************************************
+ *
+ * To use the PPZoomer you need supplementary CSS and HTML.
+ * Tags in the initial present state need a next_section
+ * attribute that contains the id of the section to display.
+ *
+ * What follows is a short example:
+ *
+ *.......................HTML..............................
+ *
+ *  <div id="categories" class="section present" >
+ *    <category next_section="news_links">News</category>
+ *    <category next_section="local_news">Local News</category>
+ *  </div>
+ *  ...
+ *    <div id="news_links" class="section future" >
+ *        <a href="http://www.cbc.ca/news">CBC</a>
+ *    <div> 
+ *
+ *.......................CSS...............................
+ *
+ *  .section { position: absolute; width: 400px; margin-left: -200px;
+ *             top: 200px; left: 50%; }
+ *
+ *  .past { opacity: 0; visibility: hidden; transform: scale(16);
+ *          transition: 0.8s ease; }
+ *
+ *  .present { transition: 0.8s ease; }
+ * 
+ *  .future { opacity: 0; visibility: hidden; transform: scale(0.2);
+ *          transition: 0.8s ease; }
+ *
  */
 function PPZoomer ( startPointId, childTagName ) {
   this.startPointId = startPointId;
