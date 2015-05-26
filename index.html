@@ -5,64 +5,10 @@
     <title>Nodal Points</title>
 
     <script type="text/javascript" src="http://mcormier.github.io/js/PPUtils-1.0.1.js"></script>
-
+    <script type="text/javascript" src="PPZoom.js"></script>
 
     <script>
-
-        var presentView;
-        var pastView;
-
-
-        function zoomer(event) {
-            event.preventDefault();
-
-            var next_section = event.target.getAttribute("next_section");
-            setPresentView(next_section);
-        }
-
-        function setPresentView( viewName ) {
-            presentView.removeClass("present");
-            presentView.addClass("past");
-
-            pastView = presentView;
-            presentView = $(viewName);
-
-            presentView.addClass("present");
-            presentView.removeClass("future");
-        }
-
-        function goBackInTime() {
-            presentView.removeClass("present");
-            presentView.addClass("future");
-
-            pastView.addClass("present");
-            pastView.removeClass("past");
-
-            presentView = pastView;
-        }
-
-        function back(event) {
-
-            if (event.keyCode === 27 && presentView !== $("categories")) {
-                  goBackInTime();
-            }
-        }
-
-        function init() {
-           presentView = $("categories");
-
-          PPUtils.bind("keyup", document, back );
-
-          var children = presentView.getElementsByTagName('category');
-          for( var i = 0; i < children.length; i++ ) {
-              PPUtils.bind("click", children[i], zoomer);
-          }
-
-        }
-
-        PPUtils.bind("load", window, init);
-
-
+        var zoomer = new PPZoomer("categories", "category")
     </script>
 
 
